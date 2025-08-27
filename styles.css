@@ -1,0 +1,97 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #0f172a; /* slate-900 */
+  color: #e2e8f0; /* slate-200 */
+}
+
+.app { max-width: 960px; margin: 0 auto; padding: 24px; }
+header { text-align: center; margin-bottom: 16px; }
+header h1 { margin: 0 0 4px; font-size: 28px; }
+.subtitle { margin: 0; color: #94a3b8; }
+
+.card {
+  background: #111827; /* gray-900 */
+  border: 1px solid #1f2937; /* gray-800 */
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hidden { display: none; }
+
+.row { display: flex; gap: 12px; align-items: center; }
+select {
+  flex: 1;
+  background: #0b1220;
+  color: #e2e8f0;
+  border: 1px solid #243041;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+button {
+  appearance: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+button.primary {
+  background: #4f46e5; /* indigo-600 */
+  color: white;
+}
+button.primary:disabled {
+  background: #312e81; /* indigo-900 */
+  color: #a5b4fc;
+  cursor: not-allowed;
+}
+button.secondary {
+  background: #0b1220;
+  color: #e2e8f0;
+  border: 1px solid #243041;
+}
+
+.question-text {
+  font-size: 24px;
+  line-height: 1.4;
+  padding: 12px;
+}
+
+.anchor-choice { display: flex; gap: 16px; margin-bottom: 12px; }
+.radio { display: flex; gap: 8px; align-items: center; }
+
+.dice-area {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.die {
+  width: 120px; height: 120px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #0b1220, #0a0f1a);
+  border: 1px solid #243041;
+  display: grid; place-items: center;
+  font-size: 54px; font-weight: 700;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35), inset 0 0 20px rgba(79,70,229,0.15);
+}
+
+.roll-result { text-align: center; font-size: 18px; margin-top: 12px; color: #c7d2fe; }
+
+footer { margin-top: 24px; text-align: center; color: #94a3b8; }
+
+/* Hide selection UI during roll and while showing result */
+#dice-section.rolling .anchor-choice,
+#dice-section.rolling h2,
+#dice-section.rolling #btn-roll,
+#dice-section.showing-result .anchor-choice,
+#dice-section.showing-result h2,
+#dice-section.showing-result #btn-roll {
+  display: none !important;
+}

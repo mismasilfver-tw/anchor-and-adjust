@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anchor & Adjust Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Anchor & Adjust Demo</h1>
+      <p class="subtitle">Loaded dice + estimation questions</p>
+    </header>
+
+    <main>
+      <!-- Step 1: Select a question from database -->
+      <section id="question-select-section" class="card">
+        <h2>1) Select a question</h2>
+        <div class="row">
+          <select id="question-select" aria-label="Select a question"></select>
+          <button id="btn-select-question" class="primary">Show Question</button>
+        </div>
+      </section>
+
+      <!-- Step 2: Show the question -->
+      <section id="question-display-section" class="card hidden">
+        <h2>2) Question</h2>
+        <div id="question-text" class="question-text"></div>
+        <button id="btn-hide-question" class="secondary">Hide question and continue</button>
+      </section>
+
+      <!-- Step 3-5: Choose anchor (3 or 9) and roll dice with animation -->
+      <section id="dice-section" class="card hidden">
+        <h2>3) Choose loaded dice and roll</h2>
+        <div class="anchor-choice">
+          <label class="radio">
+            <input type="radio" name="anchor" value="low" />
+            Anchor near 3 (totals 2–5)
+          </label>
+          <label class="radio">
+            <input type="radio" name="anchor" value="high" />
+            Anchor near 9 (totals 8–10)
+          </label>
+        </div>
+        <button id="btn-roll" class="primary" disabled>Roll the dice</button>
+
+        <div id="dice-area" class="dice-area">
+          <div id="die1" class="die">-</div>
+          <div id="die2" class="die">-</div>
+        </div>
+        <div id="roll-result" class="roll-result hidden"></div>
+      </section>
+
+      <!-- Step 6-7: Hide dice results and show the question again -->
+      <section id="post-roll-section" class="card hidden">
+        <h2>Next</h2>
+        <button id="btn-hide-results" class="secondary">Hide results and show question again</button>
+      </section>
+    </main>
+
+    <footer>
+      <small><a href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=73775711b9bceb72d5cfe3cabb68abcbd388897b" target="_blank" rel="noopener noreferrer">Inspired by the German judges study on anchoring</a>. Demo for desktop browsers. State persisted in localStorage.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
